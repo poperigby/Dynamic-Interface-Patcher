@@ -7,12 +7,16 @@ import sys
 from traceback import format_exception
 from types import TracebackType
 from typing import Callable
-from winsound import MessageBeep as alert
 
 from PySide6.QtCore import QObject
 from PySide6.QtWidgets import QApplication
 
 from ui.widgets.error_dialog import ErrorDialog
+
+if sys.platform == "win32":
+    from winsound import MessageBeep as alert
+else:
+    import chime
 
 
 class ExceptionHandler(QObject):
@@ -82,7 +86,14 @@ class ExceptionHandler(QObject):
         )
 
         # Play system alarm sound
-        alert()
+        if sys.platform == "win32":
+            alert()
+        elif sys.platform == "linux":
+            chime.theme("material")
+            chime.error()
+        elif sys.platform == "darwin":
+            chime.theme("big-sur")
+            chime.error()
 
         choice = error_dialog.exec()
 
