@@ -6,6 +6,7 @@ setup(
     author="Cutleast",
     license="CC BY-NC-ND 4.0",
     description="A dynamic patching tool for Skyrim UI mods with strict permissions.",
+    packages=find_packages(),
     include_package_data=True,  # Ensure non-Python files (like .ui and stylesheets) are included
     install_requires=[
         "lz4",
