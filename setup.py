@@ -19,6 +19,6 @@ setup(
         "jstyleson",
     ],
     entry_points={
-        "gui_scripts": [ "dip=main:main" ]
+        "gui_scripts": [ "dip=src.main:main" ]
     },
 )
