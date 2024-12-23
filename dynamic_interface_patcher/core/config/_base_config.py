@@ -9,7 +9,7 @@ from typing import Any, Iterable
 
 import jstyleson as json  # type: ignore
 
-from core.utilities.qt_res_provider import load_json_resource
+from dynamic_interface_patcher.core.utilities.qt_res_provider import load_json_resource
 
 
 class BaseConfig:

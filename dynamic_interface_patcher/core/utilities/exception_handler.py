@@ -11,7 +11,7 @@ from typing import Callable
 from PySide6.QtCore import QObject
 from PySide6.QtWidgets import QApplication
 
-from ui.widgets.error_dialog import ErrorDialog
+from dynamic_interface_patcher.ui.widgets.error_dialog import ErrorDialog
 
 if sys.platform == "win32":
     from winsound import MessageBeep as alert

@@ -14,11 +14,11 @@ from typing import Any, Optional
 import jstyleson as json
 from PySide6.QtWidgets import QApplication
 
-from core.archive.archive import Archive
-from core.bsa import BSAArchive
-from core.config.config import Config
-from core.utilities.path_splitter import split_path_with_bsa
-from core.utilities.xml_utils import beautify_xml, split_frames, unsplit_frames
+from dynamic_interface_patcher.core.archive.archive import Archive
+from dynamic_interface_patcher.core.bsa import BSAArchive
+from dynamic_interface_patcher.core.config.config import Config
+from dynamic_interface_patcher.core.utilities.path_splitter import split_path_with_bsa
+from dynamic_interface_patcher.core.utilities.xml_utils import beautify_xml, split_frames, unsplit_frames
 
 from .ffdec import FFDecInterface
 from .xdelta import XDeltaInterface

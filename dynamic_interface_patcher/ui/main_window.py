@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from core.utilities.licenses import LICENSES
+from dynamic_interface_patcher.core.utilities.licenses import LICENSES
 
 from .main_widget import MainWidget
 

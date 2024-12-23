@@ -12,12 +12,12 @@ from PySide6.QtCore import Signal
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication
 
-from core.config.config import Config
-from core.patcher.patcher import Patcher
-from core.utilities.exception_handler import ExceptionHandler
-from core.utilities.qt_res_provider import read_resource
-from core.utilities.stdout_handler import StdoutHandler
-from ui.main_window import MainWindow
+from dynamic_interface_patcher.core.config.config import Config
+from dynamic_interface_patcher.core.patcher.patcher import Patcher
+from dynamic_interface_patcher.core.utilities.exception_handler import ExceptionHandler
+from dynamic_interface_patcher.core.utilities.qt_res_provider import read_resource
+from dynamic_interface_patcher.core.utilities.stdout_handler import StdoutHandler
+from dynamic_interface_patcher.ui.main_window import MainWindow
 
 
 class App(QApplication):

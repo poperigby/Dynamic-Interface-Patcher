@@ -18,8 +18,8 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from core.utilities.status_update import StatusUpdate
-from core.utilities.stdout_handler import StdoutHandler
+from dynamic_interface_patcher.core.utilities.status_update import StatusUpdate
+from dynamic_interface_patcher.core.utilities.stdout_handler import StdoutHandler
 
 from .patcher_widget import PatcherWidget
 

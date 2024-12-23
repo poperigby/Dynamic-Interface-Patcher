@@ -24,10 +24,10 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from core.config.config import Config
-from core.patcher.patcher import Patcher
-from core.utilities.status_update import StatusUpdate
-from core.utilities.thread import Thread
+from dynamic_interface_patcher.core.config.config import Config
+from dynamic_interface_patcher.core.patcher.patcher import Patcher
+from dynamic_interface_patcher.core.utilities.status_update import StatusUpdate
+from dynamic_interface_patcher.core.utilities.thread import Thread
 
 
 class PatcherWidget(QWidget):

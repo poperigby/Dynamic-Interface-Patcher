@@ -8,7 +8,7 @@ from pathlib import Path
 
 from PySide6.QtWidgets import QApplication
 
-from core.utilities.process_runner import run_process
+from dynamic_interface_patcher.core.utilities.process_runner import run_process
 
 
 class XDeltaInterface:
