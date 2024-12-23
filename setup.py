@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-from pathlib import Path
 
 setup(
     name="Dynamic Interface Patcher",
@@ -7,7 +6,7 @@ setup(
     author="Cutleast",
     license="CC BY-NC-ND 4.0",
     description="A dynamic patching tool for Skyrim UI mods with strict permissions.",
-    packages=find_packages(where=str(Path(__file__).parent / "src")),
+    packages=find_packages(where="src"),
     package_dir={"": "src"},
     include_package_data=True,  # Ensure non-Python files (like .ui and stylesheets) are included
     install_requires=[
@@ -20,8 +19,6 @@ setup(
         "jstyleson",
     ],
     entry_points={
-        "gui_scripts": [
-            "dynamic-interface-patcher=app:main",
-        ],
+        "gui_scripts": [ "dip=main:main" ]
     },
 )

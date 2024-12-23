@@ -3,63 +3,23 @@ Copyright (c) Cutleast
 """
 
 import sys
-from argparse import ArgumentParser, Namespace
-
-import resources_rc  # noqa: F401
+from argparse import ArgumentParser
 from app import App
 
+def main():
+    # Parse command-line arguments
+    parser = ArgumentParser()
+    parser.add_argument('--debug', action='store_true', help="Enable debug mode")
+    parser.add_argument('--silent', action='store_true', help="Run in silent mode")
+    parser.add_argument('--repack_bsa', action='store_true', help="Repack BSA")
+    parser.add_argument('--output_path', type=str, help="Path for output files")
+    parser.add_argument('--patchpath', type=str, help="Path to the patch")
+    parser.add_argument('--originalpath', type=str, help="Path to the original files")
+    args = parser.parse_args()
 
-def __init_argparser() -> ArgumentParser:
-    """
-    Initializes commandline argument parser.
-    """
-
-    parser = ArgumentParser(
-        prog=sys.executable,
-        description=f"{App.APP_NAME} v{App.APP_VERSION} (c) Cutleast "
-        "- An automated patcher for UI (swf) files.",
-    )
-    parser.add_argument(
-        "-d",
-        "--debug",
-        help="Enables debug mode so that debug files get outputted.",
-        action="store_true",
-    )
-    parser.add_argument(
-        "patchpath",
-        nargs="?",
-        default="",
-        help="Path to patch that gets automatically run. An original mod path must also be given!",
-    )
-    parser.add_argument(
-        "originalpath",
-        nargs="?",
-        default="",
-        help="Path to original mod that gets automatically patched. A patch path must also be given!",
-    )
-    parser.add_argument(
-        "-b",
-        "--repack-bsa",
-        help="Enables experimental repacking of original BSA file(s).",
-        action="store_true",
-    )
-    parser.add_argument(
-        "-o",
-        "--output-path",
-        help="Specifies output path for patched files.",
-    )
-    parser.add_argument(
-        "-s",
-        "--silent",
-        help="Toggles whether the GUI is shown while patching automatically.",
-        action="store_true",
-    )
-
-    return parser
-
+    # Initialize and run GUI
+    app = App(args)
+    sys.exit(app.exec())
 
 if __name__ == "__main__":
-    parser: ArgumentParser = __init_argparser()
-    arg_namespace: Namespace = parser.parse_args()
-
-    sys.exit(App(arg_namespace).exec())
+    main()
