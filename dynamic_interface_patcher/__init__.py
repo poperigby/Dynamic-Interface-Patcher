@@ -4,7 +4,7 @@ Copyright (c) Cutleast
 
 import sys
 from argparse import ArgumentParser
-from app import App
+from dynamic_interface_patcher.app import App
 
 def main():
     # Parse command-line arguments
